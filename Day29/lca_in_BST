@@ -1,0 +1,31 @@
+class Solution {
+    // In LCA we have to find the point of seperation
+    // TC : O(n)
+    // SC : O(1)
+
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+
+        TreeNode* curr = root;
+
+        while(true) {
+            // both p and q lies on right
+            if(curr->val < p->val && curr->val < q->val) {
+                curr = curr->right;
+            }
+
+            // both p and q lies on left
+            else if(curr->val > p->val && curr->val > q->val){
+                curr = curr->left;
+            }
+
+            // p and q lies on two different side that means curr is point of separation
+            else {
+                break;
+            }
+        }
+
+        return curr;
+        
+    }
+};
