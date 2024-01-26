@@ -15,7 +15,7 @@ int setBits(int N){
         i++;
     }
   
-    if(N == 0) {s
+    if(N == 0) {
         return num;
     }
     
